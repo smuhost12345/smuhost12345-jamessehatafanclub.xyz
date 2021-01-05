@@ -9,14 +9,42 @@
   <meta property="og:video" content="https://www.jamessehatafanclub.xyz/video.mp4" />
 </head>
 <body>
-    <style>
-    video {
-      width: 50vw;
-      height: 50vh;
-      position: relative;
+  <style>
+    .video-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+    }
+    
+    #video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
+    
+    @media (min-aspect-ratio: 16/9) {
+      #video{
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+      #video {
+        width: auto;
+        height: 100%;
+      }
     }
   </style>
-  <video playsinline autoplay loop id="video">
-    <source src="video.mp4" type="video/mp4">
-  </video>
+  <div class="video-bg">
+    <video playsinline autoplay loop id="video">
+      <source src="video.mp4" type="video/mp4">
+    </video>
+  </div>
 </body>
