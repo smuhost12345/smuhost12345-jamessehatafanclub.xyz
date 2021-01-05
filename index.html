@@ -11,25 +11,10 @@
 <body>
     <style>
     video {
-      object-fit: cover;
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
+      width: 50vw;
+      height: 50vh;
+      position: relative;
     }
-      @media (min-aspect-ratio: 16/9) {
-        video {
-          width: 100vw;
-          height: auto;
-        }
-      }
-      @media (max-aspect-ratio: 16/9) {
-        video {
-          width: auto;
-          height: 100vh;
-        }
-      }
   </style>
   <video playsinline autoplay loop id="video">
     <source src="video.mp4" type="video/mp4">
