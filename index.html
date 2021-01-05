@@ -10,41 +10,30 @@
 </head>
 <body>
   <style>
-    .video-bg {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: -100;
-    }
-    
-    #video{
+    .video-header {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    &, video {
+      @include coverer;
+    }
+    video {
+      background: brown;
+      object-fit: cover;
+    }
     }
     
-    @media (min-aspect-ratio: 16/9) {
-      #video{
-        width: 100%;
-        height: auto;
-      }
+    html, body {
+    height: 100vh;
+    overflow-x: hidden;
     }
-
-    @media (max-aspect-ratio: 16/9) {
-      #video {
-        width: auto;
-        height: 100%;
-      }
+    
+    body {
+      margin: 0;
     }
   </style>
-  <div class="video-bg">
-    <video playsinline autoplay loop id="video">
-      <source src="video.mp4" type="video/mp4">
-    </video>
-  </div>
+  <header class="video-header">
+    <video src="video.mp4" playsinline autoplay loop id="video"></video>
+  </header>
 </body>
